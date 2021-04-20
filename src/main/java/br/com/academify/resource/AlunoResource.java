@@ -3,6 +3,7 @@ package br.com.academify.resource;
 import br.com.academify.model.Aluno;
 import br.com.academify.repository.AlunoReepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,6 +44,7 @@ public class AlunoResource {
                 return new ResponseEntity<Aluno>(aluno, HttpStatus.OK);
         }
 
+        @PostMapping("/remover")
         public Aluno remover(@RequestBody Aluno aluno){
                 alunoRepository.delete(aluno);
                 return aluno;
