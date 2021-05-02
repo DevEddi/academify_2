@@ -38,6 +38,7 @@ public class AlunoResource {
         public Aluno incluir(@RequestBody Aluno aluno){
             return  alunoRepository.save(aluno);
         }
+
         @PutMapping("/editar")
         public ResponseEntity<Aluno> editar(@RequestBody Aluno aluno){
                 aluno = alunoRepository.save(aluno);
@@ -48,5 +49,10 @@ public class AlunoResource {
         public Aluno remover(@RequestBody Aluno aluno){
                 alunoRepository.delete(aluno);
                 return aluno;
+        }
+
+        @GetMapping("/getTotal")
+        public int getTotal(){
+                return alunoRepository.findAll().size();
         }
 }
