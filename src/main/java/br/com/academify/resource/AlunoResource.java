@@ -1,5 +1,6 @@
 package br.com.academify.resource;
 
+import br.com.academify.controller.AlunoController;
 import br.com.academify.model.Aluno;
 import br.com.academify.repository.AlunoReepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,14 @@ public class AlunoResource {
         }
 
         @PostMapping("/incluir")
-        public Aluno incluir(@RequestBody Aluno aluno){
+        public ResponseEntity<Aluno> incluir(@RequestBody Aluno aluno){
+                AlunoController alunoController = new AlunoController();
+                if (alunoController.validarAluno(aluno)){
+                        aluno = alunoRepository.save(aluno);
+                        return new ResponseEntity(aluno, HttpStatus.OK);
+                }else {
+                        return new ResponseEntity("Nome do aluno é inválido")
+                }
             return  alunoRepository.save(aluno);
         }
 
