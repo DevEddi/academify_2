@@ -42,9 +42,9 @@ public class AlunoResource {
                         aluno = alunoRepository.save(aluno);
                         return new ResponseEntity(aluno, HttpStatus.OK);
                 }else {
-                        return new ResponseEntity("Nome do aluno é inválido")
+                        return new ResponseEntity("Nome do aluno é inválido", HttpStatus.INTERNAL_SERVER_ERROR);
                 }
-            return  alunoRepository.save(aluno);
+
         }
 
         @PutMapping("/editar")

@@ -32,6 +32,8 @@
 <div class="container">
     <h2>Inserir Aluno</h2>
 
+
+
     <div class="alert alert-danger collapse" role="alert" id="div-alert-message">
         <a class="close" onclick="esconderAlert()">×</a>
     </div>
@@ -53,34 +55,8 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    //Processar Formulario
-    $ ('#form-inserir-usuario').submit(function (event){
-        event.preventDefault();
-       //Criar formData
-       var formData = {'nome': $('#input-nome').val() };
+<script src="../resources/academify.js"></script>
+<script src="../resources/aluno-inserir.js"></script>
 
-        $.ajax({
-            headers : {
-                'Accept' : 'application/json',
-                'Content-Type' : 'application/json'
-            },
-            type: 'POST',
-            url: 'http://localhost:8080/api/aluno/incluir',
-            data: JSON.stringify(formData),
-            dataType: 'json',
-            encode: true,
-            success: function(data){
-                location.href = 'listarAlunos.html';
-
-            },
-            error:function (data){
-                $('#div-alert-message').prepend(data.responseText);
-                $('#div-alert-message').fadeIn();
-            }
-
-        });
-    });
-</script>
 </body>
 </html>
