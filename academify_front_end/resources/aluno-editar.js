@@ -6,7 +6,7 @@ var id_aluno = GetURLParameter("id");
 var id_aluno = GetURLParameter("id");
 $(document).ready(function (){
     $.ajax({
-        url: 'http://localhost:8080/api/aluno/get/{{id}}' + id_aluno,
+        url: 'http://localhost:8080/api/aluno/get/' + id_aluno,
         type: 'GET',
         dataType :'json',
         success: function (data){

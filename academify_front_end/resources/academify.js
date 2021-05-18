@@ -6,7 +6,7 @@ function GetURLParameter(sParam){
         var sParameterName = sURLVariables[i].split('=');
         if(sParameterName[0] == sParam)
         {
-            return sParamaterName[1];
+            return sParameterName[1];
         }
     }
 }
