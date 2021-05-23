@@ -14,6 +14,7 @@ public class Aluno {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String nome;
+    private String matricula;
 
     public long getId() {
         return id;
@@ -29,5 +30,13 @@ public class Aluno {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 }
