@@ -2,8 +2,11 @@
 $ ('#form-inserir-usuario').submit(function (event){
     event.preventDefault();
     //Criar formData
-    var formData = {'nome': $('#input-nome').val() };
-
+    var formData = {
+        'nome': $('#input-nome').val(),
+        'matricula': $('#input-matricula').val()
+    };
+    alert(JSON.stringify(formData));
     $.ajax({
         headers : {
             'Accept' : 'application/json',

@@ -10,6 +10,7 @@ $(document).ready(function (){
         type: 'GET',
         dataType :'json',
         success: function (data){
+            $("#input-matricula").val(data.matricula);
             $("#input-nome").val(data.nome);
 
         }
@@ -20,6 +21,7 @@ $('#form-editar-usuario').submit(function(event){
 
     var formData = {
         'id': id_aluno,
+        'matricula': $('#input-matricula').val(),
         'nome': $('#input-nome').val()
     };
 
