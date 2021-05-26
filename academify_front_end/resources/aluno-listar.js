@@ -1,5 +1,17 @@
 $(document).ready(function (){
+
+    if ($.cookie('jwt_token') == null || $.cookie('jwt_token') == undefined) {
+        alert("Usuário não autenticado");
+        location.href = "/academify_fron_tend/login.html";
+    }
+
+
+
     $.ajax({
+        headers:{
+            'Content-type': 'application/json',
+            'Authorization': 'Beaver' + $.cookie('jwt_token'),
+        },
         url:'http://localhost:8080/api/aluno/listar',
         type:'get',
         dataType: 'json',

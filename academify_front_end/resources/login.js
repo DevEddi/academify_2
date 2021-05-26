@@ -33,5 +33,5 @@ function sair() {
     console.log("Apagar token");
     $.removeCookie('jwt_token', {path: '/academifyfrontend'});
     console.log($.cookie('jwt_token'));
-    location.href = '/academifyfrontend/login.html';
+    location.href = '/academify_front_end/login.html';
 }
