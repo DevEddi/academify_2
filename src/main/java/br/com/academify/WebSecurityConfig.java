@@ -1,7 +1,8 @@
 package br.com.academify;
 
-import br.com.academify_2.filter.JwtRequestFilter;
-import br.com.academify_2.service.MyUserDetailsService;
+import br.com.academify.service.MyUserDetailsService;
+import br.com.academify.filter.JwtRequestFilter;
+import br.com.academify.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,12 +18,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
 import java.util.Arrays;
-public class WebSecurityConfig {
-    @Configuration
-    @EnableWebSecurity
-    public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+@Configuration
+@EnableWebSecurity
+
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
+
+
 
         @Autowired
         private JwtRequestFilter jwtRequestFilter;
