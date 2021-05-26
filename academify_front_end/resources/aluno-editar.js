@@ -1,11 +1,18 @@
 var id_aluno = GetURLParameter("id");
 
+$(document).ready(function () {
+    if ($.cookie('jwt_token') == null || $.cookie('jwt_token') == undefined) {
+        alert("Usuário não autenticado");
+        location.href = "/academify_front_end/login.html";
+    }
 
 
 
-var id_aluno = GetURLParameter("id");
-$(document).ready(function (){
     $.ajax({
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Beaver '+ $.cookie('jwt_token'),
+        },
         url: 'http://localhost:8080/api/aluno/get/' + id_aluno,
         type: 'GET',
         dataType :'json',
@@ -42,5 +49,5 @@ $('#form-editar-usuario').submit(function(event){
         error: function(data){
             alert("Ocorreu um erro ao editar aluno");
         }
-    })
-})
+    });
+});

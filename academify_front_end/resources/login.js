@@ -31,7 +31,7 @@ $('#form-login').submit(function (event) {
 
 function sair() {
     console.log("Apagar token");
-    $.removeCookie('jwt_token', {path: '/academifyfrontend'});
+    $.removeCookie('jwt_token', {path: '/academify_front_end'});
     console.log($.cookie('jwt_token'));
     location.href = '/academify_front_end/login.html';
 }
